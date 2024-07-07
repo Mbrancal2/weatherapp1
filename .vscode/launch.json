@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C#: WeatherApp [http]",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/WeatherApp/WeatherApp.csproj",
+            "launchConfigurationId": "TargetFramework=;http"
+        }
+    ],
+    "enableStepFiltering": true
+}
