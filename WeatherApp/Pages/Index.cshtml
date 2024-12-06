@@ -3,15 +3,6 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    @* @foreach (var item in Model.City){
-        <div>@item.CityId</div>
-    } *@
-    @* @Html.displayNameFor(model => Model.City[0].CityId) *@
-
-</div>
 <body>
   <div class="d-flex justify-content-center mt-5">
     <form method="post">
@@ -29,128 +20,8 @@
       </div>
     </form>
   </div>
-  @* <div class="d-flex justify-content-center mt-5">
-      <form>
-        <div class="input-group">
-          <label class="form-label"> search </label>
-          <input class="form-control" placeholder="No City Found">
-          <input  type="submit" value="Search" class="btn btn-primary btn-sm" >
-        </div>
-      </form>
-    </div> *@
-  @* <div class="container d-flex justify-contnet-center">
-    <form method="post">
-      <div class="input-group mb-3">
-        <label class ="form-lable" asp-for="Search_String" style="margin-right: 10px;"> Search </label>
-        @if(@Model.status_code_ok == false)
-        {
-          <input calss="form-control" asp-for="Search_String" placeholder="No City Found">
-        }
-        else
-        {
-          <input calss="form-control" asp-for="Search_String">
-        }
-        <input type="submit" value="Search" class="btn btn-primary btn-sm" />
-      </div>
-    </form>
-  </div>
-  <form method="post"> *@
-
-    @* <div class="input-group">
-      <label class ="form-lable" asp-for="Search_String" style="margin-right: 10px;"> Search </label>
-      @if(@Model.status_code_ok == false)
-      {
-        <input calss="form-control" asp-for="Search_String" placeholder="No City Found">
-      }
-      else
-      {
-        <input calss="form-control" asp-for="Search_String">
-      }
-      <input type="submit" value="Search" class="btn btn-primary btn-sm" />
-    </div>
-
-  </form> *@
+ 
 </body>
-@* <form>
-    <div class="input-group mb"
-</form>
-<div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Search">
-  <div class="input-group-append">
-    <button class="btn btn-success" type="submit">Go</button>
-  </div>
-</div>
-
-<form>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-co.ntrol" id="inputPassword" placeholder="Password">
-    </div>
-  </div>
-</form> *@
-
-@* <form class ="form-inline">
-    <div class="form-gorup">
-        <label class="control-lable" asp-for="Search_String" >Search</label>
-        <input class ="p-2" type="text" asp-for="Search_String">
-    </div>
-</form>
-<div style="width:20%;">
-  <form>
-      <div class="form-inlice">
-          <label class="control-lable" asp-for="Search_String" >Search</label>
-          <input class="form-control" type="text" asp-for="Search_String">
-      </div>
-  </form>
-</div>
-<div style="width:20%;">
-  <form class ="form-inline">
-      <div>
-          <label class="control-lable" asp-for="Search_String" >Search</label>
-          <input class="form-control" type="text" asp-for="Search_String">
-      </div>
-  </form>
-</div> *@
-@* <div style="width:20%;">
-  <form class="form-inline" role="form">
-    <div class="form-group">
-      <label>search</label>
-      <input class="form-control" type="text" asp-for="Search_String">
-      <input type="submit" value="Search" class="btn btn-primary btn-sm" />
-    </div>
-  </form>
-</div>
-
-<form class="form-group">
-    <label asp-for="Search_String" class="control-label">
-      Name:
-    </label>
-    <input class="p-2" type="text" asp-for="Search_String" />
-    <input type="submit" value="Search" class="btn btn-primary btn-sm" />
-</form> *@
-
-@* <form method="post" style="border-style:solid; display: inline-block; margin-left: 100px;">
-  <div class="input-group">
-    <label class ="form-lable" asp-for="Search_String" style="margin-right: 10px;"> Search </label>
-    @if(@Model.status_code_ok == false)
-    {
-      <input calss="form-control" asp-for="Search_String" placeholder="No City Found">
-    }
-    else
-    {
-      <input calss="form-control" asp-for="Search_String">
-    }
-    
-    <input type="submit" value="Search" class="btn btn-primary btn-sm" />
-  </div>
-</form> *@
 <br>
 <div class="container">
   <div class="row">
@@ -181,44 +52,5 @@
     <div class="column p-2" style="flex:0 0 20%">
       @Model.Weather.Timezone
     </div>
-    
-      
   </div>
-  @* <div>
-    <div class="p-2" style="flex:0 0 10%">
-      @Model.City1.Name
-    </div>
-    <div class="p-2" style="flex:0 0 10%">
-      @Model.City1.Lon
-    </div>
-    <div class="p-2" style="flex:0 0 10%">
-      @Model.City1.Lat
-    </div>
-    
-  </div> *@
-
-  @* @foreach(var city in Model.Cites){
-    <div class="p-2" style="flex:0 0 10%">
-      @city.Name
-    </div>
-    <div class="p-2" style="flex:0 0 10%">
-      @city.Lon
-    </div>
-    <div class="p-2" style="flex:0 0 10%">
-      @city.Lat
-    </div> *@
 </div>
-
-
-@* <form class=form-group>
-  <div class="input-group mb-3">
-    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
-    <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-  </div>
-</form> *@
-@* <form>
-  <div class="input-group">
-    <input class="form-control" asp-for="Search_String">
-    <input class="btn btn-primary btm-sm" type="submit" value="search">
-  </div>
-</form> *@

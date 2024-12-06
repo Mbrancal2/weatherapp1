@@ -27,7 +27,7 @@ public class IndexModel : PageModel
     }
     //public IList<City> Cites { get; set; } = default!;
 
-    string appid = "b686b53925c6c24c83629feb20580318";
+    string appid = "Add your own api key";
     public City City {get; set;} = default!;
     public Weather Weather {get; set; }
 
@@ -59,7 +59,6 @@ public class IndexModel : PageModel
             TempData["city_name"] = City.Name;
             
         }
-        //City1 = await _context.City.SingleAsync(c => c.Name == "Detroit");
 
         if ( await _context.City.AnyAsync(c => c.Name == Search_String))
         {
@@ -67,7 +66,6 @@ public class IndexModel : PageModel
             City =  await _context.City.SingleAsync(c => c.Name == Search_String);
             TempData["city_name"] = City.Name;
         }
-        //Response.Body.Write(<script>alert('Exception: ')</script>);
     }
 
 
@@ -117,7 +115,6 @@ public class IndexModel : PageModel
                 w=> w.Lon == City.Lon && w.Lat == City.Lat && w.Dt == (int)json_response_body["dt"] 
             );
             
-            //Console.WriteLine($"City name: {City.Name}, City Lon: {City.Lon}, City Lat: {City.Lat}, City Dt: {(int)json_response_body["dt"]}");
         }
         catch(Exception e){
             Console.WriteLine(e.Message);
