@@ -1,3 +1,10 @@
+*, *::before, *::after
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 14px;
 }
@@ -18,5 +25,41 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  height: 100vh;
+
+  /* margin-bottom: 60px; */
 }
+main
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card
+{
+  display: flex;
+  gap: 1rem;
+  min-width: 500px;
+  min-height: 500px;
+  background-color: red;
+}
+.search
+{
+  width: 100%;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-values
+{
+  max-width: 100%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.item
+{
+  background-color: aqua;
+  border: 2px, purple, solid;
+}
+

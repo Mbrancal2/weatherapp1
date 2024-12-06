@@ -3,7 +3,32 @@
 @{
     ViewData["Title"] = "Home page";
 }
+
 <body>
+  <main>
+    <div class="card">
+      <div class="search">
+        <form class="search-form">
+           <label class="search-form-label" asp-for="Search_String" style="display:none;">search</label>
+           <input class="search-form-input" asp-for="Search_String" placeholder="No City Found">
+           <button class="search-form-button" type="submit">search</button>
+        </form>
+      </div>
+      <div class="search-values">
+        <div class="item">@Model.City.Name</div>
+        <div class="item">@Model.City.Lon</div>
+        <div class="item">@Model.City.Lat</div>
+        <div class="item">@Model.Weather.Condition</div>
+        <div class="item">@Model.Weather.Description</div>
+        <div class="item">@Model.Weather.Temp_min</div>
+        <div class="item">@Model.Weather.Temp_max</div>
+        <div class="item">@Model.Weather.Dt</div>
+        <div class="item">@Model.Weather.Timezone</div>
+      </div>
+    </div>
+  </main>
+</body>
+@* <body>
   <div class="d-flex justify-content-center mt-5">
     <form method="post">
       <div class="input-group">
@@ -53,4 +78,4 @@
       @Model.Weather.Timezone
     </div>
   </div>
-</div>
+</div> *@
