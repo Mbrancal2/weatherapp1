@@ -6,7 +6,9 @@
             "type": "dotnet",
             "request": "launch",
             "projectPath": "${workspaceFolder}/WeatherApp/WeatherApp.csproj",
+            "browser": "chrome",
             "launchConfigurationId": "TargetFramework=;http"
+
         }
     ],
     "enableStepFiltering": true
