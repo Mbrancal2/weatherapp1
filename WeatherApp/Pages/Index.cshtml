@@ -8,24 +8,26 @@
   <main>
     <div class="card">
       <div class="search">
-        <form class="search-form pt-5 pb-5">
+        <form class="search-form form-control form-control-lg pt-5 pb-5" style="border:0; background-color: transparent;">
           <label class="search-form-label" asp-for="Search_String" style="display:none;"></label>
-          <div class="input-group">
-            <input class="search-form-input" asp-for="Search_String" placeholder="No City Found">
-           <button class="btn btn-light btn-outline-primary classsearch-form-button" type="submit">search</button>
-          </div>
+          
+            <div class="input-group d-flex justify-content-center ">
+              <input class="search-form-input" asp-for="Search_String" placeholder="No City Found">
+              <button class="btn btn-light btn-dark" type="submit">search</button>
+            </div>
+          
         </form>
       </div>
       <div class="search-values">
-        <div class="item">@Model.City.Name</div>
-        <div class="item">@Model.City.Lon</div>
-        <div class="item">@Model.City.Lat</div>
-        <div class="item">@Model.Weather.Condition</div>
-        <div class="item">@Model.Weather.Description</div>
-        <div class="item">@Model.Weather.Temp_min</div>
-        <div class="item">@Model.Weather.Temp_max</div>
-        <div class="item">@Model.Weather.Dt</div>
-        <div class="item">@Model.Weather.Timezone</div>
+        <div class="item">City: @Model.City.Name</div>
+        <div class="item">Longitude: @Model.City.Lon</div>
+        <div class="item">Lattitude: @Model.City.Lat</div>
+        <div class="item">Condition: @Model.Weather.Condition</div>
+        <div class="item">Description: @Model.Weather.Description</div>
+        <div class="item">Min-Temp: @Model.Weather.Temp_min</div>
+        <div class="item">Max-Temp: @Model.Weather.Temp_max</div>
+        <div class="item">Time: @Model.Weather.Dt</div>
+        <div class="item">Timezone: @Model.Weather.Timezone</div>
       </div>
     </div>
   </main>

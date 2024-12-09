@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/home/mbrancal/project_C#/weatherapp1/WeatherApp/wwwroot/images/istockphoto-106529026-1024x1024.jpg",
+      "PackagePath": "staticwebassets/images/istockphoto-106529026-1024x1024.jpg"
+    },
+    {
+      "Id": "/home/mbrancal/project_C#/weatherapp1/WeatherApp/wwwroot/images/istockphoto-106529026-1024x1024.jpg:Zone.Identifier",
+      "PackagePath": "staticwebassets/images/istockphoto-106529026-1024x1024.jpg:Zone.Identifier"
+    },
+    {
       "Id": "/home/mbrancal/project_C#/weatherapp1/WeatherApp/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

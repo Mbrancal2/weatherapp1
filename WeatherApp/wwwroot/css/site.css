@@ -9,11 +9,11 @@ html {
   font-size: 14px;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
-}
+} */
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
@@ -26,7 +26,13 @@ html {
 
 body {
   height: 100vh;
-
+  background-color: LightGray;
+  background-image: url('/images/istockphoto-106529026-1024x1024.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  Background-size: cover;
+  font-size: 16px;
+  color: rgb(56, 49, 49);
   /* margin-bottom: 60px; */
 }
 main
@@ -41,10 +47,13 @@ main
   gap: 1rem;
   min-width: 500px;
   min-height: 500px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+  /* background-color: rgb(255,255,255, 0.5); */
+  /* background: rgba(255, 255, 255, 0.8); */
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9); */
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .search
 {
@@ -52,16 +61,31 @@ main
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-color: rgb(255,255,255, 0.5); */
+
+}
+.search-form-input
+{
+  color: rgb(56, 49, 49);;
 }
 .search-values
 {
   max-width: 100%;
   margin-left: 2rem;
   margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  gap: 0.5rem;
 }
 .item
 {
-  background-color: aqua;
-  border: 2px, purple, solid;
+  border-radius: 0.25rem;
+  background-color: rgb(255, 255, 255, 0.3);
+  border: 2.5px, rgb(255, 255, 255, 0.4), solid;
+  min-height: 3rem; 
+  font-size: 1.5em;
+  padding-left: 1rem;
+
 }
 
