@@ -27,7 +27,7 @@ public class IndexModel : PageModel
     }
     //public IList<City> Cites { get; set; } = default!;
 
-    string appid = "Add your own api key";
+    string appid = "Add you own apikey";
     public City City {get; set;} = default!;
     public Weather Weather {get; set; }
 
@@ -43,8 +43,20 @@ public class IndexModel : PageModel
         if(City == default || City == null){
             HttpResponseMessage response = await _weatherhttpclient.GetWeatherAsync(Search_String);
             string responseBody = await response.Content.ReadAsStringAsync();
+           
             JObject? json_response_body = JsonConvert.DeserializeObject<JObject> (responseBody);
-            City = await _context.City.SingleAsync(c => c.Name == Search_String );
+
+            //City = await _context.City.SingleAsync(c => c.Name == Search_String );
+            //Console.WriteLine(json_response_body);
+            
+            
+            City = new City
+            {
+                Name = (string)json_response_body["name"],
+                Lon = (double)json_response_body["coord"]["lon"],
+                Lat = (double)json_response_body["coord"]["lat"]
+            };
+
             Weather = new Weather {
                 Condition = (string)json_response_body["weather"][0]["main"],
                 Description = (string)json_response_body["weather"][0]["description"],
@@ -60,7 +72,7 @@ public class IndexModel : PageModel
             
         }
 
-        if ( await _context.City.AnyAsync(c => c.Name == Search_String))
+        if (await _context.City.AnyAsync(c => c.Name == Search_String))
         {
 
             City =  await _context.City.SingleAsync(c => c.Name == Search_String);
