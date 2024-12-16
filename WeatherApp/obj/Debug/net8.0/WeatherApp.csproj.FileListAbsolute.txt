@@ -277,3 +277,6 @@
 /home/mbrancal/project_C#/weatherapp1/WeatherApp/obj/Debug/net8.0/WeatherApp.csproj.AssemblyReference.cache
 /home/mbrancal/project_C#/weatherapp1/WeatherApp/obj/Debug/net8.0/WeatherApp.csproj.CopyComplete
 /home/mbrancal/project_C#/weatherapp1/WeatherApp/obj/Debug/net8.0/WeatherApp.sourcelink.json
+/home/mbrancal/project_C#/weatherapp1/WeatherApp/bin/Debug/net8.0/Microsoft.AspNetCore.JsonPatch.dll
+/home/mbrancal/project_C#/weatherapp1/WeatherApp/bin/Debug/net8.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/home/mbrancal/project_C#/weatherapp1/WeatherApp/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll

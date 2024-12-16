@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing.Constraints;
 using Microsoft.EntityFrameworkCore;
@@ -27,7 +28,7 @@ public class Weather
     public double Lon { get; set; }
     //[ForeignKey("City"), Column(Order = 1)]
     public double Lat { get; set; }
-
+    [JsonIgnore]
     public virtual City City{ get; set; }
 
     //[ForeignKey("City")]

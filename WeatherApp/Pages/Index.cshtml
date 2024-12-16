@@ -1,4 +1,5 @@
 ﻿@page 
+@using WeatherApp.Models
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -10,24 +11,46 @@
       <div class="search">
         <form class="search-form form-control form-control-lg pt-5 pb-5" style="border:0; background-color: transparent;">
           <label class="search-form-label" asp-for="Search_String" style="display:none;"></label>
-          
+
             <div class="input-group d-flex justify-content-center ">
               <input class="search-form-input" asp-for="Search_String" placeholder="No City Found">
               <button class="btn btn-light btn-dark" type="submit">search</button>
             </div>
         </form>
       </div>
-      <div class="search-values">
-        <div class="item">City: @Model.City.Name</div>
-        <div class="item">Longitude: @Model.City.Lon</div>
-        <div class="item">Lattitude: @Model.City.Lat</div>
-        <div class="item">Condition: @Model.Weather.Condition</div>
-        <div class="item">Description: @Model.Weather.Description</div>
-        <div class="item">Min-Temp: @Model.Weather.Temp_min</div>
-        <div class="item">Max-Temp: @Model.Weather.Temp_max</div>
-        <div class="item">Time: @Model.Weather.Dt</div>
-        <div class="item">Timezone: @Model.Weather.Timezone</div>
-      </div>
+      @if(TempData["status_code_ok"] == "not_ok")
+      {
+        <div class="alert alert-danger"> error message will go here </div>
+        <div class="search-values">
+          @{
+            var lastWeatherJson = TempData.Peek("WeatherCondition").ToString(); 
+            var lastWeather = Newtonsoft.Json.Linq.JObject.Parse(lastWeatherJson);
+          }
+          <div class="item">City: @lastWeather["CityName"]</div>
+          <div class="item">Longitude: @lastWeather["Lon"]</div>
+          <div class="item">Lattitude: @lastWeather["lat"]</div>
+          <div class="item">Condition: @lastWeather["Condition"]</div>
+          <div class="item">Description: @lastWeather["Description"]</div>
+          <div class="item">Min-Temp: @lastWeather["Temp-min"]</div>
+          <div class="item">Max-Temp: @lastWeather["Temp-max"]</div>
+          <div class="item">Time: @lastWeather["Dt"]</div>
+          <div class="item">Timezone: @lastWeather["TimeZone"]</div>
+        </div>
+      }
+      else
+      {
+        <div class="search-values"> 
+          <div class="item">City: @Model.City.Name</div>
+          <div class="item">Longitude: @Model.City.Lon</div>
+          <div class="item">Lattitude: @Model.City.Lat</div>
+          <div class="item">Condition: @Model.Weather.Condition</div>
+          <div class="item">Description: @Model.Weather.Description</div>
+          <div class="item">Min-Temp: @Model.Weather.Temp_min</div>
+          <div class="item">Max-Temp: @Model.Weather.Temp_max</div>
+          <div class="item">Time: @Model.Weather.Dt</div>
+          <div class="item">Timezone: @Model.Weather.Timezone</div>
+        </div>
+      }
     </div>
   </main>
 </body>
