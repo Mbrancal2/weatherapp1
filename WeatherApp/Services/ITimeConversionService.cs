@@ -1,6 +1,6 @@
 
 public interface ITimeConversionService
 {
-    public DateTime ConvertUnixToDateTime( long unixtime, string timezone);
+    public DateTime ConvertUnixToDateTime( long unixtime, int timezone);
     
 }

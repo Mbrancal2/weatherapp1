@@ -10,11 +10,13 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<WeatherAppContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("WeatherAppContext") ?? throw new InvalidOperationException("Connection string 'WeatherAppContext' not found.")));
 
+
 builder.Services.AddMemoryCache();
 builder.Services.AddScoped<CacheWeatherAPIHandler>();
+builder.Services.AddSingleton<ITimeConversionService, TimeConversionService>();
 
-builder.Services.AddHttpClient<IWeatherService, WeatherHttpClient>()
-.AddHttpMessageHandler<CacheWeatherAPIHandler>();
+builder.Services.AddHttpClient<IWeatherService, WeatherHttpClient>();
+//.AddHttpMessageHandler<CacheWeatherAPIHandler>();
 
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())

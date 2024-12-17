@@ -18,23 +18,33 @@
             </div>
         </form>
       </div>
+      @{
+        var lastWeatherJson = TempData.Peek("WeatherCondition").ToString(); 
+        var lastWeather = Newtonsoft.Json.Linq.JObject.Parse(lastWeatherJson);
+      }
       @if(TempData["status_code_ok"] == "not_ok")
       {
-        <div class="alert alert-danger"> error message will go here </div>
-        <div class="search-values">
-          @{
+        <div class="error-message alert alert-danger"> 
+          <span>error message will go here</span>
+          <button class="error-message-close-button"></button>
+        </div>
+        <div class="search-values"> 
+          @* @{
             var lastWeatherJson = TempData.Peek("WeatherCondition").ToString(); 
             var lastWeather = Newtonsoft.Json.Linq.JObject.Parse(lastWeatherJson);
-          }
+          } *@
           <div class="item">City: @lastWeather["CityName"]</div>
           <div class="item">Longitude: @lastWeather["Lon"]</div>
-          <div class="item">Lattitude: @lastWeather["lat"]</div>
+          <div class="item">Lattitude: @lastWeather["Lat"]</div>
           <div class="item">Condition: @lastWeather["Condition"]</div>
           <div class="item">Description: @lastWeather["Description"]</div>
           <div class="item">Min-Temp: @lastWeather["Temp-min"]</div>
           <div class="item">Max-Temp: @lastWeather["Temp-max"]</div>
-          <div class="item">Time: @lastWeather["Dt"]</div>
-          <div class="item">Timezone: @lastWeather["TimeZone"]</div>
+          <div class="item">Date: @lastWeather["Date"]</div>
+          <div class="item">Time: @lastWeather["Time"]</div>
+          @* <div class="item">test: @lastWeather["tn"]</div> *@
+          @* <div class="item">Time: @lastWeather["Dt"]</div>
+          <div class="item">Timezone: @lastWeather["TimeZone"]</div> *@
         </div>
       }
       else
@@ -47,8 +57,10 @@
           <div class="item">Description: @Model.Weather.Description</div>
           <div class="item">Min-Temp: @Model.Weather.Temp_min</div>
           <div class="item">Max-Temp: @Model.Weather.Temp_max</div>
-          <div class="item">Time: @Model.Weather.Dt</div>
-          <div class="item">Timezone: @Model.Weather.Timezone</div>
+          <div class="item">Date: @lastWeather["Date"]</div>
+          <div class="item">Time: @lastWeather["Time"]</div>
+          @* <div class="item">Time: @Model.Weather.Dt</div>
+          <div class="item">Timezone: @Model.Weather.Timezone</div> *@
         </div>
       }
     </div>

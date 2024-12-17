@@ -3,7 +3,7 @@ public class WeatherHttpClient : IWeatherService
 {
     private readonly HttpClient _httpClient;
 
-    private readonly string APIKey  = "add your own api key here";
+    private readonly string APIKey  = "add your own api key";
     public WeatherHttpClient(HttpClient httpClient){
         _httpClient = httpClient;
         _httpClient.BaseAddress = new Uri("https://api.openweathermap.org/data/2.5/");
