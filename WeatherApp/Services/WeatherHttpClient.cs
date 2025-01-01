@@ -7,7 +7,7 @@ public class WeatherHttpClient : IWeatherService
     public WeatherHttpClient(HttpClient httpClient){
         _httpClient = httpClient;
         _httpClient.BaseAddress = new Uri("https://api.openweathermap.org/data/2.5/");
-        //"https://api.openweathermap.org/data/2.5/weather?appid=b686b53925c6c24c83629feb20580318");
+        
 
     }
     public async Task<HttpResponseMessage> GetWeatherAsync(string city)
